@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const validator = require('validator');
 const fs = require('fs'); // loading node modules
 const getNotes = require('./notes.js');
@@ -8,3 +9,4 @@ const getNotes = require('./notes.js');
 
 console.log(getNotes());
 console.log(validator.isEmail('furqan@gmail.com'));
+console.log(chalk.bold.blue.inverse('Hello world!'));
