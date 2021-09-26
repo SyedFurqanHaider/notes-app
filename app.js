@@ -1,12 +1,36 @@
 const chalk = require('chalk');
-const validator = require('validator');
-const fs = require('fs'); // loading node modules
-const getNotes = require('./notes.js');
+const yargs = require('yargs');
 
-// fs.writeFileSync('notes.txt', 'My name is Furqan.');
+yargs.command({
+  command: 'add',
+  describe: 'Adding a new note!',
+  handler: function () {
+    console.log("Adding a note!");
+  }
+});
 
-// fs.appendFileSync('notes.txt', ' I live in Islamabad.');
+yargs.command({
+  command: 'remove',
+  describe: 'Remove a note!',
+  handler: function () {
+    console.log("Remove the note!");
+  }
+});
 
-console.log(getNotes());
-console.log(validator.isEmail('furqan@gmail.com'));
-console.log(chalk.bold.blue.inverse('Hello world!'));
+yargs.command({
+  command: 'read',
+  describe: 'Read a note!',
+  handler: function () {
+    console.log("Reading a note!");
+  }
+});
+
+yargs.command({
+  command: 'list',
+  describe: 'List your notes!',
+  handler: function () {
+    console.log("List out all notes!");
+  }
+});
+
+console.log(yargs.argv)
