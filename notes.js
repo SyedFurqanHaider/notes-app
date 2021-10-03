@@ -5,6 +5,10 @@ const getNotes = () => 'My notes.';
 const addNote = ({ title, body }) => {
   const notes = loadNotes();
   const duplicateNote = notes.find((note) => note.title === title);
+
+  // node inspect app.js add --title="Shopping list" --body="A B C D"
+  debugger
+
   if(!duplicateNote) {
     notes.push({
       title,
